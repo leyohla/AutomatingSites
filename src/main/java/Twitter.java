@@ -38,7 +38,7 @@ public class Twitter {
         WebElement username = (WebElement)wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='page-container']/div/div[1]/form/fieldset/div[1]/input")));
         username.sendKeys(new CharSequence[]{"leybot1"});
         WebElement password = twitDriver.findElement(By.cssSelector("#page-container > div > div.signin-wrapper > form > fieldset > div:nth-child(3) > input"));
-        password.sendKeys(new CharSequence[]{"botgenerator1"});
+        password.sendKeys(new CharSequence[]{"not a real password"});
     }
 
     //click the login button:
@@ -51,19 +51,19 @@ public class Twitter {
     //write the tweet and click enter:
 
     public static void tweet(WebDriver twitDriver) {
-        //WebElement featherPen = twitDriver.findElement(By.cssSelector("[class = 'r-jwli3a r-4qtqp9 r-yyyyoo r-1q142lx r-50lct3 r-dnmrzs r-bnwqim r-1plcrui r-lrvibr']"));
-        //featherPen.click();
-        WebElement tweetBar = twitDriver.findElement(By.cssSelector("[class='css-1dbjc4n r-1awozwy r-sdzlij r-18u37iz r-1777fci r-dnmrzs r-1sp51qo r-o7ynqc r-6416eg']"));
+
+        WebDriverWait wait = new WebDriverWait(twitDriver, 10);
+        WebElement tweetBar = (WebElement)wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("[class='public-DraftStyleDefault-block public-DraftStyleDefault-ltr']")));
+
         tweetBar.click();
-        tweetBar.sendKeys(new CharSequence[]{"automato boto"});
-        WebElement tweetButton = twitDriver.findElement(By.className("[class='css-901oao css-16my406 r-1qd0xha r-ad9z0x r-bcqeeo r-qvutc0']"));
+        tweetBar.sendKeys(new CharSequence[]{"The guidance configures a based shoulder"});
+
+
+        WebElement tweetButton = twitDriver.findElement(By.cssSelector("[data-testid='tweetButtonInline']"));
         tweetButton.click();
 
-        WebDriverWait wait = new WebDriverWait(twitDriver, 5L);
-        WebElement clickButton = (WebElement)wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("[class='css-901oao css-16my406 r-1qd0xha r-ad9z0x r-bcqeeo r-qvutc0']")));
-        clickButton.click();
-        new WebDriverWait(twitDriver, 5L);
+        //By.xpath("[id='[\"react-root\"]/div/div/div/main/div/div/div/div[1]/div/div[2]/div[2]/div[1]/div/div/div[2]/div[2]/div/div/div[2]/div[4]/div/span/span']")));
+        //class: css-1dbjc4n r-urgr8i r-42olwf r-sdzlij r-1phboty r-rs99b7 r-1w2pmg r-1n0xq6e r-1vuscfd r-1dhvaqw r-icoktb r-1fneopy r-o7ynqc r-6416eg r-lrvibr `` "[data-testid='tweetButtonInline']"
     }
-
-    //the 'write tweet and enter' is not working
+    //tweet button cannot be identified
 }
