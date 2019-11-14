@@ -58,12 +58,12 @@ public class Twitter {
         tweetBar.click();
         tweetBar.sendKeys(new CharSequence[]{"The guidance configures a based shoulder"});
 
-
         WebElement tweetButton = twitDriver.findElement(By.cssSelector("[data-testid='tweetButtonInline']"));
         tweetButton.click();
 
         //By.xpath("[id='[\"react-root\"]/div/div/div/main/div/div/div/div[1]/div/div[2]/div[2]/div[1]/div/div/div[2]/div[2]/div/div/div[2]/div[4]/div/span/span']")));
         //class: css-1dbjc4n r-urgr8i r-42olwf r-sdzlij r-1phboty r-rs99b7 r-1w2pmg r-1n0xq6e r-1vuscfd r-1dhvaqw r-icoktb r-1fneopy r-o7ynqc r-6416eg r-lrvibr `` "[data-testid='tweetButtonInline']"
     }
-    //tweet button cannot be identified
 }
+
+//INFO: Detected dialect W3C - 0 exit code but does not send tweet for some reason.
